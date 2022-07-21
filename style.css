@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+    /* box-sizing: border-box; */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    height: 100vh;
+}
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.left-slide {
+    height: 35%;
+    width: 100%;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: nowrap;
+
+    transition: transform .5s ease-in-out;
+}
+
+.left-slide > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.left-slide h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-top: -30px;
+    
+}
+
+.right-slide {
+    height: 65%;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: transform .5s ease-in-out;
+}
+
+.right-slide > div {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-shrink: 0;
+    height: 100%;
+    width: 100%;
+}
+
+button {
+    background-color: #ffffff;
+    border: none;
+    color: #AAAAAA;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px;
+    transition: 0.5s;
+}
+
+button:hover {
+    color: #222222;
+}
+
+button:focus {
+    outline: none;
+}
+
+.slider-container .action-buttons button {
+    position: absolute;
+    left: 35%;
+    top: 35%;
+    z-index: 100;
+}
+
+.slider-container .action-buttons .left-button {
+    transform: translateY(-100%);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.slider-container .action-buttons .right-button {
+    transform: translateX(100%);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
